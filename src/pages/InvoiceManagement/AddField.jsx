@@ -11,7 +11,7 @@ import plus from "../../../public/img/plus.svg";
 
 const AddField = (props) => {
   return (
-    <Dialog className="rounded-[24px]" size="xs" open={props.open}>
+    <Dialog className="rounded-[24px]" size="sm" open={props.open}>
       <DialogBody>
         <div className="relative h-full w-full md:h-auto">
           <div className="relative bg-white dark:bg-gray-700">
