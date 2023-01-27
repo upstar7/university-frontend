@@ -1,123 +1,200 @@
 import React from "react";
-import { 
-  Button} from "@material-tailwind/react";
+import { Button } from "@material-tailwind/react";
 import Canvas from "@/widgets/charts/Canvas";
 import applicationCardData from "@/data/application-data";
 import tableCardData from "@/data/table-data copy";
 import nametableCardData from "@/data/nametable-data";
-import { statisticsCardsData} from "@/data";
+import { statisticsCardsData } from "@/data";
 import { StatisticsCard } from "@/widgets/cards";
 import Horizontal from "@/widgets/charts/Horizontal-chart";
 import ApexChart from "@/widgets/charts/stackedbar-chart";
 import Pie01 from "@/widgets/charts/pie-chart01";
 import Pie02 from "@/widgets/charts/pie-chart02";
 import ApexChartBar from "@/widgets/charts/bar-chart";
-import menuicon1 from '../../../public/img/menuicon1.svg'
+import menuicon1 from "../../../public/img/menuicon1.svg";
 export function Home() {
   return (
-    <div className="mt-12 w-full bg-[#E8E9EB]">
-      <div className="grid grid-cols-1 my-10">
-       <p className=" text-4xl font-semibold text-[#280559]">Dashboard</p>
-       <p className=" text-sm xl:text-base  font text-[#9898A3]">View all status from the dashbaord</p>
+    <div className="mt-12 w-full ">
+      <div className="my-10 grid grid-cols-1">
+        <p className=" text-4xl font-semibold text-[#280559]">Dashboard</p>
+        <p className=" font text-sm  text-[#9898A3] xl:text-base">
+          View all status from the dashboard
+        </p>
       </div>
-      <div className="mb-12 grid gap-y-10 gap-x-3 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-5">
-        {statisticsCardsData.map(({ value, title}) => (
-          <StatisticsCard
-            value={value}
-            title={title}
-          />
+      <div className="mb-12 mr-10 grid grid-cols-1 gap-y-10 gap-x-6 lg:grid-cols-2 2xl:grid-cols-5">
+        {statisticsCardsData.map(({ value, title }) => (
+          <StatisticsCard value={value} title={title} />
         ))}
       </div>
-      <div className=" mb-5 grid grid-cols-1 gap-y-12 gap-x-6 xl:grid-cols-2 laptop:grid-cols-4 lg:items-center ">
-        <Pie01/>
-        <ApexChartBar/>
-        <Pie02/>  
-        <Canvas/>
+      <div className=" mb-5 mr-10 grid grid-cols-1 gap-y-12 gap-x-6 lg:items-center xl:grid-cols-2 laptop:grid-cols-4">
+        <Pie01 />
+        <ApexChartBar />
+        <Pie02 />
+        <Canvas />
       </div>
-      
-      <div className=" mb-5 grid grid-cols-1 2xl:grid-cols-2 laptop:grid-cols-3 gap-y-12 gap-x-6">
-        <Horizontal/>
-        <ApexChart/>
-        {nametableCardData.map((items)=>(
-          <div className=" bg-white p-8 rounded-xl overflow-x-scroll">
-            <div className="flex flex-row justify-between items-center ">
-                <p className="antialiased w-1/2 text-base xl:text-xl text-black font-medium">{items.subject}</p>
-                <Button variant="outlined" className="outline outline-1 outline-[#280559] w-[115px] h-[46px] rounded-[15px] justify-center p-0" fullWidth>
-                  <p className=" text-sm xl:text-base  text-[#280559] normal-case text-center">View All</p>
-                </Button>
+
+      <div className=" mb-5 mr-10 grid grid-cols-1 gap-y-12 gap-x-6 2xl:grid-cols-2 laptop:grid-cols-3">
+        <Horizontal />
+        <ApexChart />
+        {nametableCardData.map((items) => (
+          <div className=" overflow-x-scroll rounded-xl bg-white p-8">
+            <div className="flex flex-row items-center justify-between ">
+              <p className="w-1/2 text-base font-medium text-black antialiased xl:text-xl">
+                {items.subject}
+              </p>
+              <Button
+                variant="outlined"
+                className="h-[46px] w-[115px] justify-center rounded-[15px] border border-[#280559] p-0 "
+                fullWidth
+              >
+                <p className=" text-center text-sm  font-medium normal-case text-[#280559] xl:text-base">
+                  View All
+                </p>
+              </Button>
             </div>
-            <div className="flex flex-row justify-between items-center  my-5">
-                <p className=" w-[320px] text-sm xl:text-base  text-[#92929D] font-medium">{items.name}</p>
-                <p className="w-[75px] text-sm xl:text-base  text-[#92929D] normal-case text-center px-4">Action</p>
+            <div className="my-5 flex flex-row items-center  justify-between">
+              <p className=" w-[320px] text-sm font-medium  text-[#92929D] xl:text-base">
+                {items.name}
+              </p>
+              <p className="w-[75px] px-4 text-center  text-sm normal-case text-[#92929D] xl:text-base">
+                Action
+              </p>
             </div>
             {items.tablelist.map((item) => (
-              <div className="flex flex-row justify-between items-center  mt-6">
-                  <p className="w-[320px] text-sm xl:text-lg  text-black font-medium">{item.data}</p>
-                  <Button variant="outlined" className="outline outline-1 outline-[#280559] w-[78px] h-[28px] rounded-[15px] justify-center items-center p-0"  fullWidth>
-                  <p className="text-sm xl:text-base  text-[#280559] normal-case text-center">View</p>
-                  </Button>
+              <div className="mt-6 flex flex-row items-center  justify-between">
+                <p className="w-[320px] text-sm font-medium  text-black xl:text-lg">
+                  {item.data}
+                </p>
+                <Button
+                  variant="outlined"
+                  className="h-[28px] w-[78px] items-center justify-center rounded-[15px] border border-[#280559] p-0"
+                  fullWidth
+                >
+                  <p className="text-center text-sm font-medium normal-case text-[#280559] xl:text-base">
+                    View
+                  </p>
+                </Button>
               </div>
             ))}
           </div>
         ))}
 
-        <div className=" bg-white p-8 rounded-xl overflow-x-scroll">
-          <div className="flex flex-row justify-between items-center ">
-              <p className="w-1/2 text-base xl:text-xl text-black font-medium">Application</p>
-              <Button variant="outlined" className="outline outline-1 outline-[#280559] w-[115px] h-[46px] rounded-[15px] justify-center px-2 py-0" fullWidth>
-              <p className=" text-sm xl:text-base  text-[#280559] normal-case text-center">View All</p>
-              </Button>
+        <div className=" overflow-x-scroll rounded-xl bg-white p-8">
+          <div className="flex flex-row items-center justify-between ">
+            <p className="w-1/2 text-base font-medium text-black xl:text-xl">
+              Application
+            </p>
+            <Button
+              variant="outlined"
+              className="h-[46px] w-[115px] justify-center rounded-[15px] border border-[#280559] px-2 py-0"
+              fullWidth
+            >
+              <p className=" text-center text-sm  normal-case text-[#280559] xl:text-base">
+                View All
+              </p>
+            </Button>
           </div>
-          <div className="flex flex-row justify-between items-center  my-5">
-              <p className="w-[220px] text-sm xl:text-base  text-[#92929D] font-medium">University name</p>
-              <p className="w-[75px] text-sm xl:text-base  text-[#92929D] normal-case text-center ">Status</p>
-              <p className="w-[75px] text-sm xl:text-base  text-[#92929D] normal-case text-center ">Action</p>
+          <div className="my-5 flex flex-row items-center  justify-between">
+            <p className="w-[200px] text-sm font-medium  text-[#92929D] xl:text-base">
+              University Name
+            </p>
+            <p className="w-[80px] text-center text-sm  normal-case text-[#92929D] xl:text-base ">
+              Status
+            </p>
+            <p className="w-[75px] text-center text-sm  normal-case text-[#92929D] xl:text-base ">
+              Action
+            </p>
           </div>
-          {applicationCardData.map((item) => (
-            <div className="flex flex-row justify-between items-center  mt-6">
-              <p className="w-[195px] text-sm xl:text-lg text-black font-medium mx-2">{item.name}</p>
-              <p className={`text-[${item.color}] w-[85px] text-sm xl:text-base  normal-case text-center mx-2`}>{item.status}</p>
-              <Button variant="outlined" className="outline outline-1 outline-[#280559] w-[78px] h-[28px] rounded-[15px] justify-center items-center px-2 py-0"  fullWidth>
-                <p className="text-sm xl:text-base  text-[#280559] normal-case text-center">View</p>
-              </Button>
-            </div>
-          ))}
-          
-          </div>
-
-      </div> 
-      <div className="grid grid-cols-1 laptop:grid-cols-2  gap-y-12 gap-x-6 mb-5  ">
-        {tableCardData.map((data) => (          
-        <div className="bg-white p-8 rounded-xl overflow-x-scroll">
-          <div className="flex flex-row justify-between items-center ">
-              <p className="w-1/2 text-base xl:text-xl text-black font-medium">{data.subject}</p>
-              <Button variant="outlined" className=" w-[115px] h-[46px] outline outline-1 outline-[#280559]   rounded-[15px] p-0" fullWidth>
-                <p className=" text-sm xl:text-base  text-[#280559] normal-case text-center">View All</p>
-              </Button>
-          </div>
-
-          <div className="flex flex-row justify-between items-center  my-5">
-              <p className="w-[200px] text-sm xl:text-base text-[#92929D] font-medium">Recipient</p>
-              <p className="w-[85px] text-sm xl:text-base  text-[#92929D] normal-case text-center ">Amount</p>
-              <p className="w-[85px] text-sm xl:text-base  text-[#92929D] normal-case text-center ">Status</p>
-              <p className="w-[78px] text-sm xl:text-base  text-[#92929D] normal-case text-center ">Action</p>
-          </div>
-          {data.tablelist.map((item) => (
-            <div className="flex flex-row justify-between items-center mt-8">
-              <p className="w-[200px] text-sm xl:text-lg text-black font-medium mx-2">{item.name}</p>
-              <p className="text-[#333333] w-[85px] text text-sm xl:text-lg font-bold normal-case text-center mx-2">{item.amount}</p>
-              <p className={`text-[${item.color}] w-[85px] text-sm xl:text-base  normal-case text-center mx-2`}>{item.status}</p>
-              <Button variant="outlined" className="outline outline-1 outline-[#280559] w-[78px] h-[28px] rounded-[15px] justify-center items-center px-2 py-0"  fullWidth>
-               <p className="text-sm xl:text-base  text-[#280559] normal-case text-center">View</p>
+          {applicationCardData?.map((item) => (
+            <div className="mt-6 flex flex-row items-center  justify-between">
+              <p className="mx-2 w-[195px] text-sm font-medium text-black xl:text-lg">
+                {item.name}
+              </p>
+              <p
+                className="mx-2 rounded-[100px] px-5 py-1 text-center text-xs font-medium normal-case xl:text-base"
+                style={{
+                  color: `${item.color}`,
+                  backgroundColor: `${item.color}10`,
+                }}
+              >
+                {item.status}
+              </p>
+              <Button
+                variant="outlined"
+                className="h-[28px] w-[78px] items-center justify-center rounded-[15px] border border-[#280559] px-2 py-0"
+                fullWidth
+              >
+                <p className="text-center text-sm  normal-case text-[#280559] xl:text-base">
+                  View
+                </p>
               </Button>
             </div>
           ))}
         </div>
-        ))}
-
       </div>
+      <div className="mb-5 mr-10 grid  grid-cols-1 gap-y-12 gap-x-6  laptop:grid-cols-2">
+        {tableCardData.map((data) => (
+          <div className="overflow-x-scroll rounded-xl bg-white p-8">
+            <div className="flex flex-row items-center justify-between ">
+              <p className="w-1/2 text-base font-medium text-black xl:text-xl">
+                {data.subject}
+              </p>
+              <Button
+                variant="outlined"
+                className=" h-[46px] w-[115px] rounded-[15px] border border-[#280559] p-0"
+                fullWidth
+              >
+                <p className=" text-center text-sm  normal-case text-[#280559] xl:text-base">
+                  View All
+                </p>
+              </Button>
+            </div>
 
-
+            <div className="my-5 flex flex-row items-center  justify-between">
+              <p className="w-[200px] text-sm font-medium text-[#92929D] xl:text-base">
+                Recipient
+              </p>
+              <p className="w-[85px] text-center text-sm  normal-case text-[#92929D] xl:text-base ">
+                Amount
+              </p>
+              <p className="w-[85px] text-center text-sm  normal-case text-[#92929D] xl:text-base ">
+                Status
+              </p>
+              <p className="w-[78px] text-center text-sm  normal-case text-[#92929D] xl:text-base ">
+                Action
+              </p>
+            </div>
+            {data.tablelist.map((item) => (
+              <div className="mt-8 flex flex-row items-center justify-between">
+                <p className="mx-2 w-[200px] text-sm font-medium text-black xl:text-lg">
+                  {item.name}
+                </p>
+                <p className="text mx-2 w-[85px] text-center text-sm font-bold normal-case text-[#333333] xl:text-lg">
+                  {item.amount}
+                </p>
+                <p
+                  className="mx-2 rounded-[100px] px-5 py-1 text-center text-xs normal-case xl:text-base"
+                  style={{
+                    color: `${item.color}`,
+                    backgroundColor: `${item.color}10`,
+                  }}
+                >
+                  {item.status}
+                </p>
+                <Button
+                  variant="outlined"
+                  className="h-[28px] w-[78px] items-center justify-center rounded-[15px] border border-[#280559] px-2 py-0"
+                  fullWidth
+                >
+                  <p className="text-center text-sm  normal-case text-[#280559] xl:text-base">
+                    View
+                  </p>
+                </Button>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
 
       {/* <div className="mb-[30px]">
 
@@ -258,8 +335,7 @@ export function Home() {
 
       </div> */}
 
-
-    {/* <div className="mb-[30px] flex flex-row justify-between">
+      {/* <div className="mb-[30px] flex flex-row justify-between">
       <div className="flex flex-grow bg-white rounded-3xl px-14 py-10">
         <div className=" flex justify-center mr-8 lg-max:hidden  w-[300px]">
           <RingChart/>
@@ -474,7 +550,7 @@ export function Home() {
             </table>
       </div>
        */}
-  </div>
+    </div>
   );
 }
 

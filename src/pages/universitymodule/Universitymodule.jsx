@@ -19,7 +19,7 @@ export function Universitymodule() {
         },
       ];
     return (
-        <div className="mt-12 w-full bg-[#E8E9EB] ">
+        <div className="mt-12 w-full bg-[#E8E9EB] pr-8">
             <div className="grid grid-cols-1 my-10">
                 <p className=" text-4xl font-semibold text-[#280559]">University Module</p>
                 <p className=" text-base font text-[#9898A3]">View all University and programs</p>

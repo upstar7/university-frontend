@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const withMT = require("@material-tailwind/react/utils/withMT");
-
+const colors = require('tailwindcss/colors')
 module.exports = withMT({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",
   "path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
@@ -13,7 +13,9 @@ module.exports = withMT({
       
     },
     extend: {
-      
+      colors: {
+        "disqualified": "#B70D52",
+      }
     },
   },
   plugins: [require("tailwindcss"), require("autoprefixer"), require('flowbite/plugin')],

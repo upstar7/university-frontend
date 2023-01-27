@@ -1,94 +1,99 @@
-
 export const LeadData = [
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'Disqualified',
-        color:"gray-800",
-        option:':'
-    },
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'Disqualified',
-        color:"gray-800",
-        option:':'
-    },
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'new',
-        color:'indigo-900',
-        option:':'
-    },
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'Disqualified',
-        color:"gray-800",
-        option:':'
-    },
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'Disqualified',
-        color:"gray-800",
-        option:':'
-    },
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'Disqualified',
-        color:"gray-800",
-        option:':'
-    },
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'Disqualified',
-        color:"gray-800",
-        option:':'
-    },
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'Disqualified',
-        color:"gray-800",
-        option:':'
-    },
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'Disqualified',
-        color:"gray-800",
-        option:':'
-    },
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'Disqualified',
-        color:"gray-800",
-        option:':'
-    },
-    {
-        date:"2 Jan 2023",
-        name:'Esther Eden',
-        Email:'esthereden@email.com',
-        status:'Disqualified',
-        color:"gray-800",
-        option:':'
-    },
-    
-
-  ];
-  export default LeadData;
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Qualified",
+    color: "#8E30FF",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Cold",
+    color: "#0263FF",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Warm",
+    color: "#DB0D4B",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Hot",
+    color: "#56BA6C",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Qualified",
+    color: "#8E30FF",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Cold",
+    color: "#0263FF",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Warm",
+    color: "#DB0D4B",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Hot",
+    color: "#56BA6C",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Qualified",
+    color: "#8E30FF",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Cold",
+    color: "#0263FF",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Warm",
+    color: "#DB0D4B",
+    option: ":",
+  },
+  {
+    date: "2 Jan 2023",
+    name: "Esther Eden",
+    Email: "esthereden@email.com",
+    status: "Hot",
+    color: "#56BA6C",
+    option: ":",
+  },
+];
+export default LeadData;
