@@ -58,59 +58,62 @@ export function Sidenav({ brandImg, brandName, routes, role }) {
           <p className=" pb-4 font-semibold text-white lg-max:hidden">
             {brandName}
           </p>
-
-          {routes.map(({ layout, title, pages }, key) => (
-            <ul key={key} className="mb-4 flex flex-col items-center gap-1">
-              {title && (
-                <li className="mx-3.5 mt-4 mb-2">
-                  <Typography
-                    variant="small"
-                    color={sidenavType === "dark" ? "white" : "blue-gray"}
-                    className="font-black uppercase opacity-75"
-                  >
-                    {title}
-                  </Typography>
-                </li>
-              )}
-              {pages
-                .filter(({ id }) => role.includes(id))
-                .map(({ id, icon1, icon2, name, path }) => (
-                  <li className="relative w-full" key={name}>
-                    <NavLink to={`/${layout}${path}`}>
-                      {({ isActive }) => (
-                        <div className="flex flex-row items-center">
-                          <div
-                            className={`${
-                              isActive ? "" : "hidden"
-                            } absolute left-0 h-8 w-1 rounded-sm bg-white`}
-                          />
-                          <div
-                            className={`bg-${
-                              isActive ? "[#E6EFF3]" : ""
-                            } flex w-full items-center rounded-2xl py-5 px-7 capitalize `}
-                            style={{backgroundColor: isActive ? "#E6EFF3" : ""}}
-                          >
-                            {isActive ? icon2 : icon1}
+          <div className="overfolw-y-auto" >
+            {routes.map(({ layout, title, pages }, key) => (
+              <ul key={key} className="mb-4 flex flex-col items-center gap-1">
+                {title && (
+                  <li className="mx-3.5 mt-4 mb-2">
+                    <Typography
+                      variant="small"
+                      color={sidenavType === "dark" ? "white" : "blue-gray"}
+                      className="font-black uppercase opacity-75"
+                    >
+                      {title}
+                    </Typography>
+                  </li>
+                )}
+                {pages
+                  .filter(({ id }) => role.includes(id))
+                  .map(({ id, icon1, icon2, name, path }) => (
+                    <li className="relative w-full" key={name}>
+                      <NavLink to={`/${layout}${path}`}>
+                        {({ isActive }) => (
+                          <div className="flex flex-row items-center">
                             <div
-                              className={`text-${
-                                isActive ? "[#280559]" : "[#92929D]"
-                              } mx-4 flex text-base font-medium capitalize lg-max:hidden`}
+                              className={`${
+                                isActive ? "" : "hidden"
+                              } absolute left-0 h-8 w-1 rounded-sm bg-white`}
+                            />
+                            <div
+                              className={`bg-${
+                                isActive ? "[#E6EFF3]" : ""
+                              } flex w-full items-center rounded-2xl py-5 px-7 capitalize `}
+                              style={{
+                                backgroundColor: isActive ? "#E6EFF3" : "",
+                              }}
                             >
-                              {name}
+                              {isActive ? icon2 : icon1}
+                              <div
+                                className={`text-${
+                                  isActive ? "[#280559]" : "[#92929D]"
+                                } mx-4 flex text-base font-medium capitalize lg-max:hidden`}
+                              >
+                                {name}
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        )}
+                      </NavLink>
+                      {id === "leads" && (
+                        <span className="font-500 absolute right-4 top-[18px] h-[28px] w-[40px] rounded-[20px] bg-[#DB0D4B] p-1 text-center text-[14px] text-white">
+                          10
+                        </span>
                       )}
-                    </NavLink>
-                    {id === "leads" && (
-                      <span className="font-500 absolute right-4 top-[18px] h-[28px] w-[40px] rounded-[20px] bg-[#DB0D4B] p-1 text-center text-[14px] text-white">
-                        10
-                      </span>
-                    )}
-                  </li>
-                ))}
-            </ul>
-          ))}
+                    </li>
+                  ))}
+              </ul>
+            ))}
+          </div>
         </div>
         <div className="absolute left-8 bottom-10 flex justify-around ">
           <NavLink to="/">

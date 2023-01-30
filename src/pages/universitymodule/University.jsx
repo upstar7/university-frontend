@@ -99,7 +99,7 @@ export function University() {
                     scope="col"
                     className="w-[115px] px-6 py-3 text-center text-lg font-bold text-gray-500  "
                   >
-                    action
+                    Action
                   </th>
                   <th
                     scope="col"
